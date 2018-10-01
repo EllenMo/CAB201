@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 namespace Object_Classes {
 	/// <summary>
@@ -131,23 +131,32 @@ namespace Object_Classes {
 						squares[i] = new WormholeSquare("wormhole", i, wormHoles[j, 1], wormHoles[j, 2]);
 					}
 
-					else
-					{
-						squares[i] = new Square("ordinary", i);
-					}
+
 				}
 			}
 
-            // Create the main part of the board, squares 1 .. 54
-            //  CODE NEEDS TO BE ADDED HERE
-            //
-            //   Need to call the appropriate constructor for each square
-            //       either new Square(...),  new WormholeSquare(...) or new BlackholeSquare(...)
-            //
+			for (int k = 0; k < squares.Length; k++)
+			{
+				if (squares[k] == null)
+				{
+					squares[k] = new Square("ordinary", k);
+				}
+			}
 
-            // Create the 'finish' square.
-            squares[FINISH_SQUARE_NUMBER] = new Square("Finish", FINISH_SQUARE_NUMBER);
-        } // end SetUpBoard
+
+			// Create the main part of the board, squares 1 .. 54
+			//  CODE NEEDS TO BE ADDED HERE
+			//
+			//   Need to call the appropriate constructor for each square
+			//       either new Square(...),  new WormholeSquare(...) or new BlackholeSquare(...)
+			//
+
+			// Create the 'finish' square.
+			squares[FINISH_SQUARE_NUMBER] = new Square("Finish", FINISH_SQUARE_NUMBER);
+
+	
+
+		} // end SetUpBoard
 
         /// <summary>
         /// Finds the destination square and the amount of fuel used for either a 
