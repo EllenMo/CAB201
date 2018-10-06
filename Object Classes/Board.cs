@@ -61,7 +61,7 @@ namespace Object_Classes {
 		/// </summary>
 		private static int[,] wormHoles =
 		{
-			{2, 22, 10},
+			{2, 22, 10}, //squares[1]
 			{3, 9, 3},
 			{5, 17, 6},
 			{12, 24, 6},
@@ -139,7 +139,7 @@ namespace Object_Classes {
 			{
 				if (squares[k] == null)
 				{
-					squares[k] = new Square("ordinary", k);
+					squares[k] = new Square("ordinary", k);    
 				}
 			}
 
@@ -173,7 +173,29 @@ namespace Object_Classes {
             const int start = 0, exit = 1, fuel = 2;
             destNum = 0; amount = 0;
 
-            //  CODE NEEDS TO BE ADDED HERE 
+			// ammount is the fuelss
+
+			//  CODE NEEDS TO BE ADDED HERE 
+			//destNum = start +;
+			destNum = Squares[squareNum].NextSquare().Number;
+
+			if (Squares[squareNum].Name == "blackhole")
+			{
+				amount = holes[Squares[squareNum].Number, fuel];
+			}
+
+			if (Squares[squareNum].Name == "wormhole")
+			{
+				amount = holes[Squares[squareNum].Number, fuel];
+			}
+
+			if (Squares[squareNum].Name == "ordinary")
+			{
+				amount = 0;
+			}
+
+			amount = Squares[squareNum].Number;
+			
 
         } //end FindDestSquare
 
