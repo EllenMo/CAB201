@@ -177,23 +177,23 @@ namespace Object_Classes {
 
 			//  CODE NEEDS TO BE ADDED HERE 
 			//destNum = start +;
-			destNum = Squares[squareNum].NextSquare().Number;
+			destNum = Squares[squareNum-1].NextSquare().Number;
 
-			if (Squares[squareNum].Name == "blackhole")
+			if (Squares[squareNum-1].Name == "blackhole")
 			{
-				amount = holes[Squares[squareNum].Number, fuel];
+				amount = holes[Squares[squareNum-1].Number, fuel];
 			}
 
-			if (Squares[squareNum].Name == "wormhole")
+			if (Squares[squareNum-1].Name == "wormhole")
 			{
-				amount = holes[Squares[squareNum].Number, fuel];
+				amount = holes[Squares[squareNum-1].Number, fuel];
 			}
 
-			if (Squares[squareNum].Name == "ordinary")
+			if (Squares[squareNum-1].Name == "ordinary")
 			{
 				amount = 0;
 			}
-			
+
 
         } //end FindDestSquare
 
