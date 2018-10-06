@@ -193,8 +193,6 @@ namespace Object_Classes {
 			{
 				amount = 0;
 			}
-
-			amount = Squares[squareNum].Number;
 			
 
         } //end FindDestSquare
