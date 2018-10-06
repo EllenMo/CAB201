@@ -191,7 +191,7 @@ namespace Object_Classes {
 
 			if (Squares[squareNum-1].Name == "ordinary")
 			{
-				amount = 0;
+				amount = 2;
 			}
 
 
