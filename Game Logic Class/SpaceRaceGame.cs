@@ -56,22 +56,46 @@ namespace Game_Logic_Class
         /// Pre:  none
         /// Post:  required number of players have been initialsed for start of a game.
         /// </summary>
-        public static void SetUpPlayers() 
+        public static void SetUpPlayers(int numberOfPlayers, string[] names) 
         {
-            // for number of players
-            //      create a new player object
-            //      initialize player's instance variables for start of a game
-            //      add player to the binding list
+            for (int i = 0; i < numberOfPlayers; i++) { // for number of players
+                string playerName = names[i];
+
+                //create a new player object
+                Player player = new Player(playerName);
+
+                //initialize player's instance variables for start of a game
+                player.Position = 0;
+                player.Location = Board.Squares[0];
+                player.RocketFuel = Player.INITIAL_FUEL_AMOUNT;
+                player.HasPower = true;
+                player.AtFinish = false;
+
+                //add player to the binding list
+                Players.Add(player);
+            } 
                 
-        }
+        }//end SetUpPlayers
 
             /// <summary>
             ///  Plays one round of a game
             /// </summary>
-            public static void PlayOneRound() 
-        {
+            public static void PlayOneRound(){
 
-        }
+            for (int i = 0; i < Players.Count; i++) {
+                //initialise die
+                Die d1 = new Die();
+                Die d2 = new Die();
 
-    }//end SnakesAndLadders
+                //player.play method
+
+                //
+
+
+            }
+
+
+            }//end PlayOneRound
+
+    }//end SpaceRaceGame
 }
