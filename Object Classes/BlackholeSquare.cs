@@ -28,10 +28,10 @@ namespace Object_Classes {
         ///    
         /// Pre:  the player lands on this square
         /// Post: amount of fuel is consumed, player's location and position 
-        ///        on the Board is udated
+        ///        on the Board is updated
         /// </summary>
-        public override void LandOn(Player player)
-        {
+        public override void LandOn(Player player){
+
             player.Location = player.Location.NextSquare();
 
             player.Position = destination;

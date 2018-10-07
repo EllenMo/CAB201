@@ -44,8 +44,8 @@ namespace Object_Classes {
         }
 
 
-        //this has been added
-        //the number of squares the player will move
+        //added by Ellen Morwitch
+        //the number of squares the player will move, based on the die roll
         private int squaresToMove;
         public int SquaresToMove {
             get {
@@ -98,8 +98,7 @@ namespace Object_Classes {
             set {
                 playerTokenColour = value;
                 playerTokenImage = new Bitmap(1, 1);
-                using (Graphics g = Graphics.FromImage(PlayerTokenImage))
-                {
+                using (Graphics g = Graphics.FromImage(PlayerTokenImage)) {
                     g.FillRectangle(playerTokenColour, 0, 0, 1, 1);
                 }
             }
@@ -112,7 +111,7 @@ namespace Object_Classes {
             }
         }
 
-        
+
         /// <summary>
         /// Parameterless constructor.
         /// Do not want the generic default constructor to be used
@@ -132,65 +131,57 @@ namespace Object_Classes {
         /// Post: player object has name
         /// </summary>
         /// <param name="name">Name for this player</param>
-        public Player(String name)//, Square initialLocation)
-        {
+        public Player(String name){
             Name = name;
         } // end Player constructor
 
-       
+
         /// <summary>
         /// Rolls the two dice to determine 
         ///     the number of squares to move forward;
         ///     moves the player position on the board; 
         ///     updates the player's location to new position; and
-        ///     determines the poutcome of landing on this square.
+        ///     determines the outcome of landing on this square.
         /// Pre: the dice are itialised
         /// Post: the player is moved along the board and the effect
         ///     of the location the player landed on is applied.
         /// </summary>
         /// <param name="d1">first die</param>
         /// <param name="d2">second die</param>
-        public void Play(Die d1, Die d2) {
+        public void Play(Die d1, Die d2, Player player) {
 
             //roll the two dice and assign to number of squares to move
+            d1.Roll();
+            d2.Roll();
             SquaresToMove = d1.FaceValue + d2.FaceValue;
 
             //move the player position on the board
-          
             Position = Position + SquaresToMove;
 
             //update the players location to new position
             Location = Board.Squares[Position];
 
-            //determine the outcome of landing on this square
-            //some if statements based on the current Location of the player
-            //and whether or not they need to move somewhere else or not
+            //determine the outcome of landing on this square (wormhole or blackhole or normal)
+            if (Location.Name == "Wormhole") {
+                //the player has landed on a wormhole
+                //update position, then location
+                player.Position = ;
+                player.Location = ;
 
-            //this is a really gross way to do it...
-
-            if (Location.Name == "WormholeSquare") {
-                //go to location
-                Location. = 
-                //fuel change
-                if (RocketFuel == INITIAL_FUEL_AMOUNT) {
-                    RocketFuel = INITIAL_FUEL_AMOUNT - ;
-                } else {
-                    RocketFuel = RocketFuel - ;
-                }
-                
+            } else if (Location.Name == "Blackhole") {
+                //the player has landed on a blackhole
+                BlackholeSquare.LandOn(player);
 
             } else {
-                if (Location.Name == "BlackholeSquare") {
-                    //it's a blackhole and you do these things
-
-
-                } else {
-                    //it's normal and you do these things
-                }
+                //the player has landed on an ordinary square
+                Square.LandOn(player);
             }
 
 
-        } // end Play.
+        }// end Play.
+
+
+
 
 
         /// <summary>
@@ -217,7 +208,7 @@ namespace Object_Classes {
         /// <returns>true if reached the Final Square</returns>
         private bool ReachedFinalSquare() {
 
-            if (position == 55) {  // this may not be quite right - need to check
+            if (position == 55) {  
                 return true;
             } else {
                 return false;
@@ -229,5 +220,6 @@ namespace Object_Classes {
 
 
     } //end class Player
+}//end namespace
 
-}
+

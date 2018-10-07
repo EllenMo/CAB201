@@ -4,3 +4,9 @@ C:\Sandpit\Student Project\Space Race\Object Classes\obj\Debug\Object Classes.cs
 C:\Sandpit\Student Project\Space Race\Object Classes\obj\Debug\Object Classes.csproj.CoreCompileInputs.cache
 C:\Sandpit\Student Project\Space Race\Object Classes\obj\Debug\Object Classes.dll
 C:\Sandpit\Student Project\Space Race\Object Classes\obj\Debug\Object Classes.pdb
+C:\Users\ellen\OneDrive\Documents\2018\UNI\STUDY\SEM 2\CAB201 - Programming Principles\Major Assignment\Space Race\Space Race Git\Object Classes\obj\Debug\Object Classes.csprojAssemblyReference.cache
+C:\Users\ellen\OneDrive\Documents\2018\UNI\STUDY\SEM 2\CAB201 - Programming Principles\Major Assignment\Space Race\Space Race Git\Object Classes\obj\Debug\Object Classes.csproj.CoreCompileInputs.cache
+C:\Users\ellen\OneDrive\Documents\2018\UNI\STUDY\SEM 2\CAB201 - Programming Principles\Major Assignment\Space Race\Space Race Git\Object Classes\obj\Debug\Object Classes.dll
+C:\Users\ellen\OneDrive\Documents\2018\UNI\STUDY\SEM 2\CAB201 - Programming Principles\Major Assignment\Space Race\Space Race Git\Object Classes\obj\Debug\Object Classes.pdb
+C:\Users\ellen\OneDrive\Documents\2018\UNI\STUDY\SEM 2\CAB201 - Programming Principles\Major Assignment\Space Race\Space Race Git\Object Classes\bin\Debug\Object Classes.dll
+C:\Users\ellen\OneDrive\Documents\2018\UNI\STUDY\SEM 2\CAB201 - Programming Principles\Major Assignment\Space Race\Space Race Git\Object Classes\bin\Debug\Object Classes.pdb
