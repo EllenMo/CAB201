@@ -1,0 +1,10 @@
+diff a/Object Classes/Board.cs b/Object Classes/Board.cs	(rejected hunks)
+@@ -191,7 +191,7 @@
+ 
+ 			if (Squares[squareNum-1].Name == "ordinary")
+ 			{
+-				amount = 0;
++				amount = 2;
+ 			}
+ 
+ 

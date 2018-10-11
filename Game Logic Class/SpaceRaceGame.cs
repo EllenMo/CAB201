@@ -67,6 +67,7 @@ namespace Game_Logic_Class
                 //initialize player's instance variables for start of a game
                 player.Position = 0;
                 player.Location = Board.Squares[0];
+                player.SquaresToMove = 0;
                 player.RocketFuel = Player.INITIAL_FUEL_AMOUNT;
                 player.HasPower = true;
                 player.AtFinish = false;
@@ -77,25 +78,27 @@ namespace Game_Logic_Class
                 
         }//end SetUpPlayers
 
-            /// <summary>
-            ///  Plays one round of a game
-            /// </summary>
-            public static void PlayOneRound(){
+        /// <summary>
+        ///  Plays one round of a game
+        /// </summary>
+        public static void PlayOneRound(){
 
             for (int i = 0; i < Players.Count; i++) {
                 //initialise die
                 Die d1 = new Die();
                 Die d2 = new Die();
 
-                //player.play method
+                //player.play method if players arent on last square or out of fuel
+                if (Players[i].AtFinish != true) {
+                    if (Players[i].RocketFuel != 0) {
+                        Players[i].Play(d1, d2);
+                    }
+                }
+               
+            }//end for
 
-                //
 
-
-            }
-
-
-            }//end PlayOneRound
+        }//end PlayOneRound
 
     }//end SpaceRaceGame
 }

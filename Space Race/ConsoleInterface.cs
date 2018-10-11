@@ -26,7 +26,17 @@ namespace Space_Race
 
             // Create the required players in Game Logic class and initialize players 
             //for start of a game
-           SpaceRaceGame.SetUpPlayers(numberOfPlayers, SpaceRaceGame.names);
+            SpaceRaceGame.SetUpPlayers(numberOfPlayers, SpaceRaceGame.names);
+
+            Console.WriteLine("\nPress Enter to play a round...");
+
+            // while no one has finished the game
+            int roundNumber = 0;
+            for () {
+                SpaceRaceGame.PlayOneRound();
+                roundNumber++;
+
+            }
 
             /*          
              loop  until game is finished           
@@ -53,6 +63,12 @@ namespace Space_Race
             Console.WriteLine("Welcome to Space Race.\n");
         } //end DisplayIntroductionMessage
 
+
+
+
+
+
+    
         //####################################################//
         //the following method has been added by Ellen Morwitch
         ///<summary>
@@ -62,7 +78,7 @@ namespace Space_Race
         /// </summary>
         static int PromptForPlayers() {
             //display message to user
-            Console.WriteLine("Please enter the number of players you wish to have (2-6): ");
+            Console.WriteLine("This game is for 2 to 6 players.\nHow many players (2-6): ");
             string numPlayers = Console.ReadLine();
 
             //check user input
@@ -76,6 +92,33 @@ namespace Space_Race
             
             return numberOfPlayers;
         }//end PromptForPlayers
+
+
+
+
+
+
+        /// <summary>
+        /// Displays the results of a round.
+        /// Pre:  a round of the game has been played
+        /// Post: the results are displayed.
+        /// </summary>
+        static void DisplayRoundResults(int roundnumber) {
+            int numberOfPlayers = SpaceRaceGame.Players.Count;
+            //some way to convert the number to
+            Console.WriteLine("\n\t{} Round\n");
+
+            for (int numplayers = 0; numplayers < numberOfPlayers; numplayers++) {
+                
+                Console.WriteLine(SpaceRaceGame.Players[numplayers].Name +
+                    " on square "+ SpaceRaceGame.Players[numplayers].Location +
+                    " with " + SpaceRaceGame.Players[numplayers].RocketFuel + 
+                    " yottawatt of power remaining");
+            }//end for           
+        }//end DisplayRoundResults
+
+
+
 
 
         /// <summary>

@@ -56,7 +56,6 @@ namespace Object_Classes {
             }
         }
 
-
         // amount of rocket fuel remaining for this player
         private int fuelLeft;
         public int RocketFuel {
@@ -135,7 +134,7 @@ namespace Object_Classes {
             Name = name;
         } // end Player constructor
 
-
+        
         /// <summary>
         /// Rolls the two dice to determine 
         ///     the number of squares to move forward;
@@ -148,7 +147,7 @@ namespace Object_Classes {
         /// </summary>
         /// <param name="d1">first die</param>
         /// <param name="d2">second die</param>
-        public void Play(Die d1, Die d2, Player player) {
+        public void Play(Die d1, Die d2) {
 
             //roll the two dice and assign to number of squares to move
             d1.Roll();
@@ -156,28 +155,16 @@ namespace Object_Classes {
             SquaresToMove = d1.FaceValue + d2.FaceValue;
 
             //move the player position on the board
-            Position = Position + SquaresToMove;
+            position = position + SquaresToMove;
 
             //update the players location to new position
-            Location = Board.Squares[Position];
+            location = Board.Squares[position];
 
-            //determine the outcome of landing on this square (wormhole or blackhole or normal)
-            if (Location.Name == "Wormhole") {
-                //the player has landed on a wormhole
-                //update position, then location
-                player.Position = ;
-                player.Location = ;
+            //determine the outcome of landing on this square
+            location.LandOn(this);
 
-            } else if (Location.Name == "Blackhole") {
-                //the player has landed on a blackhole
-                BlackholeSquare.LandOn(player);
-
-            } else {
-                //the player has landed on an ordinary square
-                Square.LandOn(player);
-            }
-
-
+            AtFinish = ReachedFinalSquare();
+         
         }// end Play.
 
 
@@ -208,7 +195,7 @@ namespace Object_Classes {
         /// <returns>true if reached the Final Square</returns>
         private bool ReachedFinalSquare() {
 
-            if (position == 55) {  
+            if (Position == 55) {  
                 return true;
             } else {
                 return false;

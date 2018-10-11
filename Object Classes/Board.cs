@@ -122,12 +122,12 @@ namespace Object_Classes {
                 for (int j = 0; j < 8; j++) {
                     if (i == blackHoles[j, 0]) {
                         FindDestSquare(blackHoles, i, out int destNum, out int amount);
-                        squares[i] = new BlackholeSquare("Blackhole", i, destNum, amount);
+                        squares[i] = new BlackholeSquare(i.ToString(), i, destNum, amount); 
                     }
 
                     if (i == wormHoles[j, 0]) {
                         FindDestSquare(wormHoles, i, out int destNum, out int amount);
-                        squares[i] = new WormholeSquare("Wormhole", i, destNum, amount);
+                        squares[i] = new WormholeSquare(i.ToString(), i, destNum, amount);
                     }
 
 
@@ -136,7 +136,7 @@ namespace Object_Classes {
 
             for (int k = 0; k < squares.Length - 1; k++) {
                 if (squares[k] == null) {
-                    squares[k] = new Square("Ordinary", k);
+                    squares[k] = new Square(k.ToString(), k);
                 }
             }
 
