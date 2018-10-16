@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 //DO NOT DELETE the two following using statements *********************************
 using Game_Logic_Class;
 using Object_Classes;
@@ -37,6 +38,7 @@ namespace Space_Race
                 int roundNumber = 0;
                 bool nextround = true;
                 bool winnerExists = false;
+                
 
                 PressEnterRound(nextround);
 
@@ -54,6 +56,8 @@ namespace Space_Race
 
                         //check if anyone has won
                         winnerExists = WinnerExists();
+                        CheckFuel();
+                        
 
                     }//end round while
 
@@ -193,8 +197,22 @@ namespace Space_Race
         /// Post: a message is displayed if no players have fuel left.
         /// </summary>
         static void CheckFuel() {
+            int numPlayers = SpaceRaceGame.Players.Count;
+            List<bool> anyFuelLeft = new List<bool>(numPlayers);
+
+            for (int numplayer = 0; numplayer > numPlayers; numplayer++) {
+                if (SpaceRaceGame.Players[numplayer].RocketFuel != 0) {
+                    anyFuelLeft[numplayer] = true;
+                } else {
+                    anyFuelLeft[numplayer] = false;
+                }//end if else                
+            }//end for
+
+            if (!anyFuelLeft.Contains(true)) {
+                Console.WriteLine("All players have run out of fuel.");
+            }
             
-        }
+        }//end CheckFuel
 
 
 
