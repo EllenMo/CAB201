@@ -157,13 +157,26 @@ namespace Object_Classes {
             //move the player position on the board
             position = position + SquaresToMove;
 
-            //update the players location to new position
-            location = Board.Squares[position];
+            //while the destination is outside the square range, re roll the die
+            while (position > Board.FINISH_SQUARE_NUMBER) {
+                position = position - SquaresToMove;
+                d1.Roll();
+                d2.Roll();
+                SquaresToMove = d1.FaceValue + d2.FaceValue;
+                position = position + SquaresToMove;
+            } 
 
-            //determine the outcome of landing on this square
-            location.LandOn(this);
+                //update the players location to new position
+                location = Board.Squares[position];
 
-            AtFinish = ReachedFinalSquare();
+                //determine the outcome of landing on this square
+                location.LandOn(this);
+
+                AtFinish = ReachedFinalSquare();
+
+            
+
+            
          
         }// end Play.
 

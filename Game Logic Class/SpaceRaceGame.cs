@@ -82,14 +82,14 @@ namespace Game_Logic_Class
         ///  Plays one round of a game
         /// </summary>
         public static void PlayOneRound(){
+            //initialise die
+            Die d1 = new Die();
+            Die d2 = new Die();
 
-            for (int i = 0; i < Players.Count; i++) {
-                //initialise die
-                Die d1 = new Die();
-                Die d2 = new Die();
+            for (int i = 0; i < Players.Count; i++) {               
 
                 //player.play method if players arent on last square or out of fuel
-                if (Players[i].AtFinish != true) {
+                if (Players[i].AtFinish == false) {
                     if (Players[i].RocketFuel != 0) {
                         Players[i].Play(d1, d2);
                     }
