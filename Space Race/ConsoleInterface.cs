@@ -29,7 +29,7 @@ namespace Space_Race
 
             //Determine number of players - initally play with 2 for testing purposes
             numberOfPlayers = PromptForPlayers();
-            SpaceRaceGame.SetUpPlayers(numberOfPlayers, SpaceRaceGame.names);
+            SpaceRaceGame.SetUpPlayers();
 
             // loop through multiple games if the user wants to play multiple
             while (playGame == "Y" || playGame == "y") {
@@ -81,7 +81,7 @@ namespace Space_Race
 
                     // Create the required players in Game Logic class and initialize players 
                     //for start of a game                    
-                    SpaceRaceGame.SetUpPlayers(numberOfPlayers, SpaceRaceGame.names);
+                    SpaceRaceGame.SetUpPlayers();
 
                 } else {
                     //display exit message

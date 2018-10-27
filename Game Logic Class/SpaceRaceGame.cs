@@ -56,10 +56,11 @@ namespace Game_Logic_Class
         /// Pre:  none
         /// Post:  required number of players have been initialsed for start of a game.
         /// </summary>
-        public static void SetUpPlayers(int numberOfPlayers, string[] names) 
+        public static void SetUpPlayers() 
         {
+
             for (int i = 0; i < numberOfPlayers; i++) { // for number of players
-                string playerName = names[i];
+                string playerName = SpaceRaceGame.names[i];
 
                 //create a new player object
                 Player player = new Player(playerName);
